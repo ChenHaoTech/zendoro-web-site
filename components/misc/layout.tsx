@@ -2,6 +2,7 @@ import Footer from './footer'
 import Header from './header'
 import Meta from './meta'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 type Props = {
   children: React.ReactNode
@@ -27,6 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="AW-16663863890" />
       <body>{children}</body>
       <GoogleAnalytics gaId="G-TLD2XHD410" />
     </html>
