@@ -28,9 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="AW-16663863890" />
       <body>{children}</body>
       <GoogleAnalytics gaId="G-TLD2XHD410" />
+       <GoogleTagManager gtmId="AW-16663863890" />
     </html>
   )
 }
