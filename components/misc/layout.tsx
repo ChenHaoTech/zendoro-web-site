@@ -21,7 +21,7 @@ const Layout = ({ children }: Props) => {
   )
 }
 
-export default function RootLayout({
+export function RootLayout({
   children,
 }: {
   children: React.ReactNode

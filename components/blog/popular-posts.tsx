@@ -8,7 +8,7 @@ export type PopularPostProps = {
 }[]
 
 const popularPosts: PopularPostProps = [
-  {
+   {
     slug: "/posts/imagine-google-keep-with-obsidian-sync/",
     title: "Imagine Google Keep with Bi-directional Sync to Obsidian"
   },
@@ -23,7 +23,7 @@ const popularPosts: PopularPostProps = [
   {
     slug: "/posts/best-web-clipper-for-obsidian/",
     title: "The Best Web Clipper for Obsidian"
-  }
+  } 
 ]
 
 function PopularPosts() {
