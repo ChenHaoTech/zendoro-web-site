@@ -76,7 +76,10 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
+  // 将 params.slug 数组拼接成一个路径字符串
   const slug = path.join(...params.slug);
+  
+  // 根据 slug 获取文章的详细信息
   const post = await getPostBySlug(slug, [
     "title",
     "excerpt",
@@ -87,11 +90,19 @@ export async function getStaticProps({ params }: Params) {
     "ogImage",
     "coverImage",
   ]);
+  
+  // 将文章内容从 Markdown 转换为 HTML
   const content = await markdownToHtml(post.content || "", slug);
+  
+  // 获取所有链接的映射关系
   const linkMapping = await getLinksMapping();
+  
+  // 找到所有包含当前文章 slug 的反向链接，并排除当前文章本身
   const backlinks = Object.keys(linkMapping).filter((k) =>
     linkMapping[k].includes(post.slug) && k !== post.slug
   );
+  
+  // 获取每个反向链接文章的标题和摘要
   const backlinkNodes = Object.fromEntries(
     await Promise.all(backlinks.map(async (slug) => {
       const post = await getPostBySlug(slug, ["title", "excerpt"]);
@@ -99,6 +110,7 @@ export async function getStaticProps({ params }: Params) {
     })),
   );
 
+  // 返回文章的详细信息和反向链接信息作为属性
   return {
     props: {
       post: {
@@ -110,11 +122,21 @@ export async function getStaticProps({ params }: Params) {
   };
 }
 
+
+/**
+ * 获取静态路径
+ * 该函数用于获取所有文章的静态路径，并过滤掉以 "docs/" 开头的文章。
+ * 返回的路径将用于静态生成页面。
+ */
 export async function getStaticPaths() {
+  // 获取所有文章的 slug
   let posts = await getAllPosts(["slug"]);
-  posts = posts.filter(p => !p.slug.startsWith('docs/'))
+  
+  // 过滤掉以 "docs/" 开头的文章
+  posts = posts.filter(p => !p.slug.startsWith('docs/'));
 
   return {
+    // 将每篇文章的 slug 分割成路径数组
     paths: posts.map((post) => {
       return {
         params: {
@@ -122,6 +144,7 @@ export async function getStaticPaths() {
         },
       };
     }),
+    // fallback 设置为 false，表示其他未定义的路径将返回 404 页面
     fallback: false,
   };
 }
