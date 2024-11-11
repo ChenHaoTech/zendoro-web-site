@@ -21,18 +21,25 @@ function useOutsideAlerter(ref, callback) {
   }, [ref]);
 }
 
+/**
+ * Search 组件
+ * @param {boolean} visible - 控制搜索框的显示状态
+ * @param {function} setVisible - 设置搜索框显示状态的函数
+ */
 function Search({ visible, setVisible }) {
   const router = useRouter();
   const inputRef = useRef(null);
   const containerRef = useRef(null);
   const [searchResults, setSearchResults] = useState([]);
 
+  // 当搜索框可见时，自动聚焦输入框
   useEffect(() => {
     if (visible) {
       inputRef.current?.focus();
     }
   }, [visible]);
 
+  // 监听键盘事件，按下 Ctrl+K 或 Cmd+K 显示搜索框，按下 Esc 隐藏搜索框
   useEffect(() => {
     const handleKeydown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -48,15 +55,18 @@ function Search({ visible, setVisible }) {
     };
   }, []);
 
+  // 点击搜索框外部时隐藏搜索框
   useOutsideAlerter(containerRef, (e: MouseEvent) => {
     setVisible(false);
     e.stopPropagation();
   });
 
+  // 路由变化时隐藏搜索框
   useEffect(() => {
     setVisible(false);
   }, [router.asPath]);
 
+  // 处理输入框内容变化，进行搜索请求
   async function handleChangeInput(e) {
     const res = await fetch(`/api/search?q=${e.target.value}`);
     setSearchResults(await res.json());
@@ -64,15 +74,14 @@ function Search({ visible, setVisible }) {
 
   return (
     <div
-      className={`absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-y-auto overscroll-none overflow-x-hidden bg-white/95 ${
-        visible ? "block" : "hidden"
-      }`}
+      className={`absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-y-auto overscroll-none overflow-x-hidden bg-white/95 ${visible ? "block" : "hidden"
+        }`}
     >
       <div
         ref={containerRef}
         className="max-w-4xl mx-auto flex flex-wrap mt-5 px-5"
       >
-        {/* Search Bar */}
+        {/* 搜索栏 */}
         <div className="w-full">
           <label className="block text-sm sr-only" htmlFor="search">
             Search
@@ -102,7 +111,7 @@ function Search({ visible, setVisible }) {
           </div>
         </div>
 
-        {/* Search Results */}
+        {/* 搜索结果 */}
         {searchResults.map((res) => (
           <PostPreview
             key={res.item.slug}
