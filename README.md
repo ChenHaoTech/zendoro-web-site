@@ -1,9 +1,6 @@
 # TOOD
 - [ ] 如何发布 md 文件? 
 - [ ] 需要修改什么内容? 
-  - [ ] 打上todo 标签
-  - [ ] 重新思考下布局
-  - [ ] 颜色主题(先忽略, 微调最后搞)
   - [ ] 修改本地DNS, 让 fleetingnotes.app重新定位到本地
   - [ ] 对应的check list 输出出来, 以后使用
   - [ ] ts 如何字符串拼接
@@ -21,10 +18,6 @@
 - [ ] favicon 修改
 - [ ] 一些常用的链接, 替换所有的`fleetingnotes`的文本。
 
-
-- [ ] tail wind 学习
-- [ ] next 启动有什么注意事项吗
-- [ ] change fav icon
 
 ---
 ## 文件结构

@@ -12,6 +12,7 @@ export default function Home() {
 
   // handle password resets
   useEffect(() => {
+    // 重置密码的
     supabase.auth.onAuthStateChange(async (event, session) => {
       console.log(event);
       console.log(session?.user.email);
