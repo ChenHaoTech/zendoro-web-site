@@ -38,40 +38,56 @@ function getPaginationArr(currPage: number, maxPage: number, numItems: number = 
   return pageList;
 }
 
-
+/**
+ * 分页组件
+ * @param currPage 当前页码
+ * @param maxPage 最大页码
+ */
 function Pagination({ currPage, maxPage }: Props) {
+  // 生成分页数组
   const paginationArr = getPaginationArr(currPage, maxPage);
+  
   return (
     <div className="flex justify-center mb-10">
-        <ul className="inline-flex -space-x-px">
-          <li key="previous">
-            {(currPage === 1) ? (
-              <a className="bg-white border border-gray-300 text-gray-500 ml-0 rounded-l-lg leading-tight py-2 px-3 cursor-default">Previous</a>
-            ): (
-              <a href={`/posts/${currPage - 1}`}
-                className="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ml-0 rounded-l-lg leading-tight py-2 px-3 ">Previous</a>
-            )} 
-          </li>
-          {paginationArr.map((i) => (i === currPage) ? (
-            <li key={i}>
-              <a href="" aria-current="page"
-                className="bg-blue-50 border border-gray-300 text-blue-600 hover:bg-blue-100 hover:text-blue-700 py-2 px-3">{i}</a>
-            </li>
+      <ul className="inline-flex -space-x-px">
+        <li key="previous">
+          {/* 如果当前页码是第一页，禁用“Previous”按钮 */}
+          {(currPage === 1) ? (
+            <a className="bg-white border border-gray-300 text-gray-500 ml-0 rounded-l-lg leading-tight py-2 px-3 cursor-default">Previous</a>
           ) : (
-            <li key={i}>
-              <a href={`/posts/${i}`}
-                className="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 hover:text-gray-700 leading-tight py-2 px-3 ">{i}</a>
-            </li>
-          ))}
-          <li key="next">
-            {(currPage === maxPage) ? (
-              <a className={`bg-white border border-gray-300 text-gray-500 rounded-r-lg leading-tight py-2 px-3 cursor-default`}>Next</a>
-            ): (
-              <a href={`/posts/${currPage + 1}`}
-                className={`bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 hover:text-gray-700 rounded-r-lg leading-tight py-2 px-3`}>Next</a>
-            )} 
+            // 否则，提供链接到前一页
+            <a href={
+`/posts/${currPage - 1}`}
+              className="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 hover:text-gray-700 ml-0 rounded-l-lg leading-tight py-2 px-3 ">Previous</a>
+          )}
+        </li>
+        
+        {/* 遍历分页数组，生成页码链接 */}
+        {paginationArr.map((i) => (i === currPage) ? (
+          <li key={i}>
+            {/* 当前页码高亮显示 */}
+            <a href="" aria-current="page"
+              className="bg-blue-50 border border-gray-300 text-blue-600 hover:bg-blue-100 hover:text-blue-700 py-2 px-3">{i}</a>
           </li>
-        </ul>
+        ) : (
+          <li key={i}>
+            {/* 其他页码提供链接 */}
+            <a href={`/posts/${i}`}
+              className="bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 hover:text-gray-700 leading-tight py-2 px-3 ">{i}</a>
+          </li>
+        ))}
+        
+        <li key="next">
+          {/* 如果当前页码是最后一页，禁用“Next”按钮 */}
+          {(currPage === maxPage) ? (
+            <a className={`bg-white border border-gray-300 text-gray-500 rounded-r-lg leading-tight py-2 px-3 cursor-default`}>Next</a>
+          ) : (
+            // 否则，提供链接到下一页
+            <a href={`/posts/${currPage + 1}`}
+              className={`bg-white border border-gray-300 text-gray-500 hover:bg-gray-100 hover:text-gray-700 rounded-r-lg leading-tight py-2 px-3`}>Next</a>
+          )}
+        </li>
+      </ul>
     </div>
   )
 }
