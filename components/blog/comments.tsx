@@ -5,6 +5,7 @@ function Comments() {
     <div className="mb-5">
       <Giscus
         id="comments"
+        //todo  修改 
         repo="fleetingnotes/fleeting-notes-website-md"
         repoId="R_kgDOImOn5w"
         category="Announcements"
