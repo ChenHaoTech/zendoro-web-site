@@ -12,8 +12,7 @@ export default function DocumentationSidebar({
   // 初始化链接打开状态
   let initLinkOpenState = null;
   Object.keys(sidebarData).forEach((k, i) => {
-    if (slug.startsWith(
-`docs/${k}`)) {
+    if (slug.startsWith(`docs/${k}`)) {
       initLinkOpenState = i;
     }
   });
