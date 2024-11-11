@@ -89,9 +89,17 @@ type Params = {
   };
 };
 
+/**
+ * 获取静态属性，用于生成静态页面
+ * @param params 包含 slug 的参数对象
+ * @returns 包含文章内容、反向链接和侧边栏数据的属性对象
+ */
 export async function getStaticProps({ params }: Params) {
+  // 将 slug 数组拼接成路径字符串
   const slug = path.join(...params.slug);
+  // 构建文档的完整 slug 路径
   const docSlug = path.join("docs", slug);
+  // 根据 slug 获取文章数据
   const post = getPostBySlug(docSlug, [
     "title",
     "excerpt",
@@ -102,11 +110,15 @@ export async function getStaticProps({ params }: Params) {
     "ogImage",
     "coverImage",
   ]);
+  // 将文章内容从 markdown 转换为 HTML
   const content = await markdownToHtml(post.content || "", docSlug);
+  // 获取所有链接映射
   const linkMapping = getLinksMapping();
+  // 过滤出指向当前文章的反向链接
   const backlinks = Object.keys(linkMapping).filter((k) =>
     linkMapping[k].includes(post.slug) && k !== post.slug
   );
+  // 获取反向链接的文章数据
   const backlinkNodes = Object.fromEntries(
     await Promise.all(backlinks.map(async (slug) => {
       const post = await getPostBySlug(slug, ["title", "excerpt"]);
@@ -114,6 +126,7 @@ export async function getStaticProps({ params }: Params) {
     })),
   );
 
+  // 返回包含文章内容、反向链接和侧边栏数据的属性对象
   return {
     props: {
       post: {
@@ -125,6 +138,7 @@ export async function getStaticProps({ params }: Params) {
     },
   };
 }
+
 
 export async function getStaticPaths() {
   const posts = getAllPostsInDocs();
