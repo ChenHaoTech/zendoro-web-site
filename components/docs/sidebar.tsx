@@ -9,18 +9,23 @@ export default function DocumentationSidebar({
   sidebarData,
   slug,
 }: Props) {
+  // 初始化链接打开状态
   let initLinkOpenState = null;
   Object.keys(sidebarData).forEach((k, i) => {
-    if (slug.startsWith(`docs/${k}`)) {
+    if (slug.startsWith(
+`docs/${k}`)) {
       initLinkOpenState = i;
     }
   });
+
+  // 定义侧边栏导航和链接打开状态的状态变量
   const [sidebarNavOpen, setSidebarNavOpen] = useState<boolean>(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState<number | null>(initLinkOpenState);
 
   return (
     <aside className="relative my-12 md:my-0 md:w-64 md:mr-12 lg:mr-20 md:shrink-0">
       <div className="sticky top-28">
+        {/* 移动端显示的导航按钮 */}
         <button
           className="flex items-center justify-between text-lg font-medium text-gray-900 w-full my-4 md:hidden"
           onClick={(e) => {
@@ -55,10 +60,10 @@ export default function DocumentationSidebar({
           </svg>
         </button>
 
-        {/* Docs nav */}
+        {/* 文档导航 */}
         <nav className={`md:block ${!sidebarNavOpen && "hidden"}`}>
           <ul className="font-medium -my-2">
-            {/* 1st level */}
+            {/* 一级导航 */}
             {Object.keys(sidebarData).map((k, i) => {
               const title = sidebarData[k].find(e => e.file === `index`)?.title || k;
               return (
@@ -76,7 +81,7 @@ export default function DocumentationSidebar({
                     }}
                     aria-expanded={sidebarLinkOpen == i}
                   >
-                    {/*START*/}
+                    {/* 一级导航标题 */}
                     <div className="flex items-center grow">
                       <span>{title}</span>
                     </div>
@@ -88,7 +93,7 @@ export default function DocumentationSidebar({
                       <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
                     </svg>
                   </a>
-                  {/* 2nd level */}
+                  {/* 二级导航 */}
                   <ul
                     className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${
                       !(sidebarLinkOpen == i) && "hidden"
@@ -109,7 +114,6 @@ export default function DocumentationSidebar({
                   </ul>
                 </li>
             )})}
-            {/* END */}
           </ul>
         </nav>
       </div>
