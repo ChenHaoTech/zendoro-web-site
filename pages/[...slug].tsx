@@ -75,6 +75,11 @@ type Params = {
   };
 };
 
+/**
+ * 导出一个名为getStaticProps的函数将在构建时使用从该函数返回的 props 预渲染页面
+ * @param param0 
+ * @returns 
+ */
 export async function getStaticProps({ params }: Params) {
   // 将 params.slug 数组拼接成一个路径字符串
   const slug = path.join(...params.slug);
