@@ -24,13 +24,21 @@ type Props = {
   backlinks: { [k: string]: Items };
   sidebarData: SidebarData;
 };
-
+/**
+ * DocumentationPost 组件用于渲染文档页面
+ * @param post 文章内容
+ * @param backlinks 反向链接
+ * @param sidebarData 侧边栏数据
+ */
 export default function DocumentationPost(
   { post, backlinks, sidebarData }: Props,
 ) {
   const router = useRouter();
+  // 截取文章摘要的前 155 个字符作为描述
   const description = post.excerpt.slice(0, 155);
+  // 构建文章的绝对 URL
   const absUrl = path.join("https://fleetingnotes.app", router.asPath);
+  // 如果路由不是回退状态且文章没有 slug，返回 404 错误页面
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -48,6 +56,7 @@ export default function DocumentationPost(
               type: "article",
               url: absUrl,
               images: [{
+                // 如果文章有 ogImage，使用其 URL，否则使用默认图片
                 url: (post.ogImage?.url)
                   ? post.ogImage.url
                   : "https://fleetingnotes.app/favicon/512.png",
@@ -59,10 +68,12 @@ export default function DocumentationPost(
           />
           <PostWrapper className="max-w-5xl mx-auto px-4">
             <div className="md:flex md:justify-between">
+              {/* 渲染文档侧边栏 */}
               <DocumentationSidebar
                 sidebarData={sidebarData}
                 slug={post.slug}
               />
+              {/* 渲染文章内容 */}
               <PostSingle
                 title={post.title}
                 content={post.content}
@@ -72,6 +83,7 @@ export default function DocumentationPost(
               />
             </div>
             <div className="max-w-3xl mx-auto">
+              {/* 渲染评论组件 */}
               <Comments />
             </div>
           </PostWrapper>
@@ -81,11 +93,12 @@ export default function DocumentationPost(
   );
 }
 
+
 type Params = {
   params: {
     slug: string[];
     backlinks: string[];
-    sidebarData: SidebarData; 
+    sidebarData: SidebarData;
   };
 };
 
@@ -162,7 +175,7 @@ export async function getStaticPaths() {
  */
 function getAllPostsInDocs() {
   // 获取所有文章并过滤出 slug 以 "docs/" 开头的文章
-  const posts = getAllPosts(["slug", "title"]).filter((p: { slug: string }) => 
+  const posts = getAllPosts(["slug", "title"]).filter((p: { slug: string }) =>
     p.slug.startsWith("docs/")
   );
   // 去掉 slug 中的 "docs/" 前缀
@@ -172,7 +185,7 @@ function getAllPostsInDocs() {
   return posts;
 }
 
-export type SidebarData = { [key: string]: {title: string, file: string}[] };
+export type SidebarData = { [key: string]: { title: string, file: string }[] };
 
 /**
  * 获取侧边栏数据
