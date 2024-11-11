@@ -142,10 +142,16 @@ export async function getStaticPaths() {
   };
 }
 
+/**
+ * 获取所有在 "docs/" 目录下的文章
+ * @returns 过滤并处理后的文章列表
+ */
 function getAllPostsInDocs() {
+  // 获取所有文章并过滤出 slug 以 "docs/" 开头的文章
   const posts = getAllPosts(["slug", "title"]).filter((p: { slug: string }) => 
     p.slug.startsWith("docs/")
   );
+  // 去掉 slug 中的 "docs/" 前缀
   posts.forEach((p: { slug: string }) => {
     p.slug = p.slug.replace("docs/", "");
   });
@@ -154,20 +160,30 @@ function getAllPostsInDocs() {
 
 export type SidebarData = { [key: string]: {title: string, file: string}[] };
 
+/**
+ * 获取侧边栏数据
+ * @returns 侧边栏数据对象，包含文件夹和文件信息
+ */
 function getSidebarData() {
+  // 获取所有在 "docs/" 目录下的文章
   const posts = getAllPostsInDocs();
   const sidebarData: SidebarData = {};
+  // 遍历每篇文章，构建侧边栏数据
   posts.forEach((p: { slug: string, title: string }) => {
+    // 将 slug 按路径分隔符拆分
     const parts = p.slug.split(path.sep);
+    // 如果分隔后的部分长度为 2，表示有文件夹和文件
     if (parts.length == 2) {
       const [folder, file] = parts;
       const obj = {
         title: p?.title,
         file: file,
       }
+      // 如果文件夹已存在于 sidebarData 中，添加文件信息
       if (sidebarData[folder]) {
         sidebarData[folder].push(obj);
       } else {
+        // 如果文件夹不存在，创建新的文件夹并添加文件信息
         sidebarData[folder] = [obj];
       }
     }
