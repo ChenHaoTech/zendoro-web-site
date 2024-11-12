@@ -16,8 +16,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   // 去掉 slug 中的 .md 后缀
   const realSlug = slug.replace(/\.md$/, '')
   // 获取文章的完整路径
-  const fullPath = path.join(mdDir, 
-`${realSlug}.md`)
+  const fullPath = path.join(mdDir, `${realSlug}.md`)
   // 解析文件内容为对象
   const data = parseFileToObj(fullPath);
 

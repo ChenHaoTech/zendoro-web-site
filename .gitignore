@@ -38,3 +38,7 @@ next-env.d.ts
 # markdown
 /public/md_assets/
 /common_md/
+
+
+.idea
+.idea/*
