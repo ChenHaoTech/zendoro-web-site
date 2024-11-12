@@ -1,4 +1,6 @@
 import React from 'react';
+import Layout from '../components/misc/layout';
+import { NextSeo } from 'next-seo';
 
 // 类型定义
 type StoreButtonProps = {
@@ -56,7 +58,7 @@ const StoreButton: React.FC<StoreButtonProps> = ({ type, className = '' }) => {
                 <div className="mr-3">
                     <IconMonitor />
                 </div>
-                
+
                 <div className="text-left">
                     <div className="text-xs">Get it from</div>
                     <div className="text-sm font-semibold">Microsoft Store</div>
@@ -94,14 +96,13 @@ const StoreButton: React.FC<StoreButtonProps> = ({ type, className = '' }) => {
     );
 };
 
-const DownloadPage: React.FC = () => {
+const DownloadTable: React.FC = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl font-bold text-gray-800 mb-4">下载我们的应用</h1>
-                    <p className="text-lg text-gray-600">选择您的设备平台开始下载</p>
+                <div className="p-6">
+                    <h1 className="text-3xl font-bold text-center mb-8"></h1>
                 </div>
 
                 {/* Download Cards Grid */}
@@ -115,7 +116,6 @@ const DownloadPage: React.FC = () => {
                                 </div>
                                 <h2 className="text-xl font-semibold mb-2">Windows 版本</h2>
                                 <p className="text-sm text-gray-500 mb-4">支持 Windows 10/11</p>
-                                <StoreButton type="microsoft" />
                                 <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2">
                                     <IconDownload />
                                     直接下载安装包
@@ -160,15 +160,16 @@ const DownloadPage: React.FC = () => {
                         </div>
                     </Card>
                 </div>
-
-                {/* Additional Info */}
-                <div className="mt-12 text-center text-gray-600">
-                    <p className="mb-2">遇到问题? 联系我们的技术支持</p>
-                    <p className="text-sm">support@example.com</p>
-                </div>
             </div>
         </div>
     );
 };
 
-export default DownloadPage;
+export default function Downloading() {
+    return (
+        <Layout>
+            <NextSeo title="Download" />
+            <DownloadTable />
+        </Layout>
+    )
+}
