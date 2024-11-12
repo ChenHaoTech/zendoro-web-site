@@ -77,7 +77,7 @@ const Header = () => {
                   </button>
                 </li>
                 <li>
-                  <Link href="https://docs.fleetingnotes.app/getting-started/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+                  <Link href="/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
                     <span>Download Now</span>
                     <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
@@ -130,7 +130,7 @@ const Header = () => {
                     <button onClick={() => {setSearching(true); setMobileNavOpen(false);}} className="flex text-gray-600 hover:text-gray-900 py-2 w-full">Search</button>
                   </li>                                  
                   <li>
-                    <Link href="https://docs.fleetingnotes.app/getting-started/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
+                    <Link href="/download" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2">
                       <span>Download Now</span>
                       <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fillRule="nonzero" />
