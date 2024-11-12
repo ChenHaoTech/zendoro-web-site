@@ -5,6 +5,7 @@ description:
 publish: true
 ---
 ## General
+### [[Whya|sdkjsldk]]
 ### [[How to reset your password|1. I have trouble signing in. How do I reset my password?]]
 ### [[Setup Obsidian cloud sync|2. How do I sync Fleeting Notes with Obsidian?]]
 ### [[How to fix Obsidian plugin sync|3. Fleeting Notes Obsidian Plugin is not syncing correctly. How do I fix it?]]
