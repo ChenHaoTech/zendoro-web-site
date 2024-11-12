@@ -63,9 +63,6 @@ const Header = () => {
                   <Link href="/pricing" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Pricing</Link>
                 </li>
                 <li>
-                  <Link href="/posts" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
-                </li>              
-                <li>
                   <Link href="/docs" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Docs</Link>
                 </li>              
               </ul>
@@ -129,9 +126,6 @@ const Header = () => {
                   <li>
                     <Link href="/pricing" className="flex text-gray-600 hover:text-gray-900 py-2">Pricing</Link>
                   </li>
-                  <li>
-                    <Link href="/posts" className="flex text-gray-600 hover:text-gray-900 py-2">Blog</Link>
-                  </li>                                  
                   <li>
                     <button onClick={() => {setSearching(true); setMobileNavOpen(false);}} className="flex text-gray-600 hover:text-gray-900 py-2 w-full">Search</button>
                   </li>                                  

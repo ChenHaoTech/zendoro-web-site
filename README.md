@@ -19,6 +19,13 @@
 - [ ] 一些常用的链接, 替换所有的`fleetingnotes`的文本。
 
 
+## md 模板
+./download.md
+./docs
+./posts
+./fag.md
+
+
 ---
 ## 文件结构
 
