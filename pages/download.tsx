@@ -12,6 +12,15 @@ type CardProps = {
     children: React.ReactNode;
     className?: string;
 };
+const IconBrowser = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2" />
+        <line x1="2" x2="22" y1="10" y2="10" />
+        <line x1="7" x2="7" y1="8" y2="8" />
+        <line x1="12" x2="12" y1="8" y2="8" />
+    </svg>
+);
+
 
 // 图标组件
 const IconDownload = () => (
@@ -82,7 +91,7 @@ const StoreButton: React.FC<StoreButtonProps> = ({ type, className = '' }) => {
                     <IconSmartphone />
                 </div>
                 <div className="text-left">
-                    <div className="text-xs">GET IT ON</div>
+                    <div className="text-xs">🚧 Beta Testing, Coming Soon</div>
                     <div className="text-sm font-semibold">Google Play</div>
                 </div>
             </div>
@@ -108,19 +117,21 @@ const DownloadTable: React.FC = () => {
                 {/* Download Cards Grid */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {/* Windows */}
-                    <Card className="group hover:shadow-xl transition-shadow duration-300">
+                    <Card className="group hover:shadow-xl transition-shadow duration-300 relative">
+                        <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-[1px] z-10 flex items-center justify-center">
+                            <div className="text-black text-6xl font-bold">🚧</div>
+                        </div>
                         <div className="p-6">
                             <div className="text-center">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
                                     <IconMonitor />
                                 </div>
-                                <h2 className="text-xl font-semibold mb-2">Windows 版本</h2>
+                                <h2 className="text-xl font-semibold mb-2">Windows Version</h2>
                                 <p className="text-sm text-gray-500 mb-4">支持 Windows 10/11</p>
                                 <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2">
                                     <IconDownload />
                                     直接下载安装包
                                 </button>
-                                <p className="text-xs text-gray-400 mt-2">版本 2.1.0</p>
                             </div>
                         </div>
                     </Card>
@@ -132,30 +143,60 @@ const DownloadTable: React.FC = () => {
                                 <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors duration-300">
                                     <IconApple />
                                 </div>
-                                <h2 className="text-xl font-semibold mb-2">Apple 设备</h2>
-                                <p className="text-sm text-gray-500 mb-4">支持 iOS 14.0+ / macOS 11.0+</p>
-                                <StoreButton type="apple" />
+                                <h2 className="text-xl font-semibold mb-2">Apple Devices</h2>
+                                <p className="text-sm text-gray-500 mb-4">Compatible with iOS 14.0+ / macOS 11.0+</p>
+                                <a href={process.env.Link_Zendoro_AppStore} target="_blank" rel="noopener noreferrer">
+                                    <StoreButton type="apple" />
+                                </a>
                                 <div className="flex gap-2 text-sm text-gray-500 justify-center mt-4">
                                     <span className="px-2 py-1 bg-gray-100 rounded">iPhone</span>
                                     <span className="px-2 py-1 bg-gray-100 rounded">iPad</span>
                                     <span className="px-2 py-1 bg-gray-100 rounded">Mac</span>
                                 </div>
-                                <p className="text-xs text-gray-400 mt-2">版本 2.1.0</p>
                             </div>
                         </div>
                     </Card>
 
                     {/* Android */}
-                    <Card className="md:col-span-2 group hover:shadow-xl transition-shadow duration-300">
+                    <Card className="group hover:shadow-xl transition-shadow duration-300">
                         <div className="p-6">
                             <div className="text-center">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
                                     <IconSmartphone />
                                 </div>
-                                <h2 className="text-xl font-semibold mb-2">Android 版本</h2>
-                                <p className="text-sm text-gray-500 mb-4">支持 Android 8.0+</p>
+                                <h2 className="text-xl font-semibold mb-2">Android Version</h2>
                                 <StoreButton type="google" />
-                                <p className="text-xs text-gray-400 mt-2">版本 2.1.0</p>
+                            </div>
+                            <a
+                                href={process.env.Link_Zendoro_APK}
+                                target="_blank"
+                                rel="noopener noreferrer" 
+                                className="w-full mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2"
+                            >
+                                <IconDownload />
+                                Download APK
+                            </a>
+                        </div>
+                    </Card>
+
+                    {/* Web */}
+                    <Card className="group hover:shadow-xl transition-shadow duration-300">
+                        <div className="p-6">
+                            <div className="text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
+                                    <IconBrowser />
+                                </div>
+                                <h2 className="text-xl font-semibold mb-2">Web Version</h2>
+                                <p className="text-sm text-gray-500 mb-4">支持所有现代浏览器</p>
+                                <a 
+                                    href={process.env.Link_Zendoro_Web}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2"
+                                >
+                                    <IconBrowser />
+                                    打开 Web Version
+                                </a>
                             </div>
                         </div>
                     </Card>
