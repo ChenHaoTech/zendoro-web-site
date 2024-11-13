@@ -16,8 +16,8 @@ function PricingTables() {
         <span>Access to apps on all platforms</span>,
         <span>Plugin for Obsidian MD sync</span>,
       ],
-      monthlyUrl: "https://my.fleetingnotes.app/",
-      annualUrl: "https://my.fleetingnotes.app/",
+      monthlyUrl: process.env.Link_Zendoro_Web,
+      annualUrl: process.env.Link_Zendoro_Web,
       ctaText: "Try Web App Now",
     },
     {
@@ -31,8 +31,8 @@ function PricingTables() {
         <span>Unlimited logged in devices</span>,
         <span>25 MB Attachment Limit</span>,
       ],
-      monthlyUrl: "https://payments.fleetingnotes.app/?price=basic_monthly",
-      annualUrl: "https://payments.fleetingnotes.app/?price=basic_yearly",
+      monthlyUrl: "/download",
+      annualUrl: "/download",
       ctaText: "Get started",
     },
     {
@@ -47,8 +47,8 @@ function PricingTables() {
         <span>AI powered link suggestions</span>,
         <span>And more to come...</span>,
       ],
-      monthlyUrl: "https://payments.fleetingnotes.app/?price=premium_monthly",
-      annualUrl: "https://payments.fleetingnotes.app/?price=premium_yearly",
+      monthlyUrl: "/download",
+      annualUrl: "/download",
       ctaText: "Get started",
     },
   ]);
