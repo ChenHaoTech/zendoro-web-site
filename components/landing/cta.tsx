@@ -12,12 +12,12 @@ function Cta() {
               {/* CTA content */}
               <div className="mb-6 lg:mr-16 lg:mb-0 text-center lg:text-left">
                 <h3 className="h3 text-white mb-2">Join the Discord community!</h3>
-                <p className="text-white text-lg opacity-75">Make feature requests, report bugs, or chat with me! Otherwise you can reach me at <a className="underline" href="mailto:matthew@fleetingnotes.app">matthew@fleetingnotes.app</a></p>
+                <p className="text-white text-lg opacity-75">Make feature requests, report bugs, or chat with me! Otherwise you can reach me at <a className="underline" href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a></p>
               </div>
 
               {/* CTA button */}
               <div>
-                <a className="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white w-36" href="https://discord.gg/xrj6yuGNmx">Join Now</a>
+                <a className="btn text-blue-600 bg-gradient-to-r from-blue-100 to-white w-36" href={process.env.NEXT_PUBLIC_LINK_DISCORD}>Join Now</a>
               </div>
 
             </div>
