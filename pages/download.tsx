@@ -145,7 +145,7 @@ const DownloadTable: React.FC = () => {
                                 </div>
                                 <h2 className="text-xl font-semibold mb-2">Apple Devices</h2>
                                 <p className="text-sm text-gray-500 mb-4">Compatible with iOS 14.0+ / macOS 11.0+</p>
-                                <a href={process.env.Link_Zendoro_AppStore} target="_blank" rel="noopener noreferrer">
+                                <a href={process.env.NEXT_PUBLIC_LINK_ZENDORO_APPSTORE} target="_blank" rel="noopener noreferrer">
                                     <StoreButton type="apple" />
                                 </a>
                                 <div className="flex gap-2 text-sm text-gray-500 justify-center mt-4">
@@ -168,7 +168,7 @@ const DownloadTable: React.FC = () => {
                                 <StoreButton type="google" />
                             </div>
                             <a
-                                href={process.env.Link_Zendoro_APK}
+                                href={process.env.NEXT_PUBLIC_LINK_ZENDORO_APK}
                                 target="_blank"
                                 rel="noopener noreferrer" 
                                 className="w-full mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2"
@@ -189,7 +189,7 @@ const DownloadTable: React.FC = () => {
                                 <h2 className="text-xl font-semibold mb-2">Web Version</h2>
                                 <p className="text-sm text-gray-500 mb-4">支持所有现代浏览器</p>
                                 <a 
-                                    href={process.env.Link_Zendoro_Web}
+                                    href={process.env.NEXT_PUBLIC_LINK_ZENDORO_WEB}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2"
