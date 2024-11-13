@@ -8,7 +8,6 @@ export default function Pricing() {
     <Layout>
       <NextSeo title="Pricing" />
       <PricingTables />
-      <FeaturesTable />
     </Layout>
   )
 }

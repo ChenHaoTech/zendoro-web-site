@@ -10,47 +10,49 @@ function PricingTables() {
       annualPrice: ["$", "0", "/month"],
       featured: false,
       features: [
-        <span>Unlimited Notes</span>,
-        <span>10 MB Attachment Limit</span>,
-        <span>All offline features</span>,
-        <span>Access to apps on all platforms</span>,
-        <span>Plugin for Obsidian MD sync</span>,
+        <span>Basic Pomodoro timer functionality 🍅</span>,
+        <span>Task management and to-do lists ✅</span>,
+        <span>Basic reminders ⏰</span>,
+        <span>Basic offline features</span>,
+        <span>Limited window statistics tracking</span>,
+        <span>Basic data analytics support</span>,
       ],
       monthlyUrl: process.env.Link_Zendoro_Web,
       annualUrl: process.env.Link_Zendoro_Web,
       ctaText: "Try Web App Now",
     },
     {
-      name: "Basic",
+      name: "Member",
       blurb: "For people who capture across multiple devices",
-      monthlyPrice: ["$", "6", "/month"],
-      annualPrice: ["$", "5", "/month"],
+      monthlyPrice: ["$", process.env.NEXT_PUBLIC_PRICE_MONTHLY || "3", "/month"],
+      annualPrice: ["$", process.env.NEXT_PUBLIC_PRICE_ANNUAL || "2", "/month"],
       featured: true,
       features: [
         <b>Everything on the free plan</b>,
-        <span>Unlimited logged in devices</span>,
-        <span>25 MB Attachment Limit</span>,
+        <span>Real-time sync across all platforms, including Apple, Android, Windows, and Web 💥</span>,
+        <span>All functions related to time block statistics 📊</span>,
+        <span>Window statistics record full support 🖥️</span>,
       ],
       monthlyUrl: "/download",
       annualUrl: "/download",
       ctaText: "Get started",
     },
-    {
-      name: "Believer",
-      blurb: "For people who believe in the future of Fleeting Notes",
-      monthlyPrice: ["$", "12", "/month"],
-      annualPrice: ["$", "10", "/month"],
-      featured: false,
-      features: [
-        <b>Everything on the Basic plan</b>,
-        <span>Notes from SMS and phone calls</span>,
-        <span>AI powered link suggestions</span>,
-        <span>And more to come...</span>,
-      ],
-      monthlyUrl: "/download",
-      annualUrl: "/download",
-      ctaText: "Get started",
-    },
+    // {
+    //   name: "Believer",
+    //   blurb: "For people who believe in the future of Fleeting Notes",
+    //   monthlyPrice: ["$", "12", "/month"],
+    //   annualPrice: ["$", "10", "/month"],
+    //   featured: false,
+    //   features: [
+    //     <b>Everything on the Basic plan</b>,
+    //     <span>Notes from SMS and phone calls</span>,
+    //     <span>AI powered link suggestions</span>,
+    //     <span>And more to come...</span>,
+    //   ],
+    //   monthlyUrl: "/download",
+    //   annualUrl: "/download",
+    //   ctaText: "Get started",
+    // },
   ]);
 
   return (
@@ -67,7 +69,7 @@ function PricingTables() {
               data-aos="zoom-y-out"
               data-aos-delay="150"
             >
-              Our free plan offers all you need to sync and link effortlessly with Obsidian. Subscribe to login from anywhere.
+               Subscribe to login from anywhere.
             </p>
           </div>
 
@@ -116,7 +118,7 @@ function PricingTables() {
               </div>
             </div>
 
-            <div className="max-w-sm md:max-w-2xl xl:max-w-none mx-auto grid gap-8 md:grid-cols-2 xl:grid-cols-3 xl:gap-6 items-start">
+            <div className="max-w-sm md:max-w-2xl xl:max-w-2xl mx-auto grid gap-8 md:grid-cols-2 xl:grid-cols-2 xl:gap-6 items-start">
               {plans.map(
                 (plan) => (
                   <div
@@ -161,7 +163,7 @@ function PricingTables() {
                       </div>
                       <div className="text-lg text-gray-800">{plan.blurb}</div>
                     </div>
-                    <ul className="text-gray-600 -mb-2 grow">
+                    <ul className="text-gray-600 -mb-2 flex-1">
                       {plan.features.map((feature, i) => (
                         <li key={i} className="flex items-center mb-2">
                           <svg
@@ -177,7 +179,7 @@ function PricingTables() {
                     </ul>
                     <div className="border-t border-gray-200 pt-5 mt-6">
                       <a
-                        className="btn-sm text-white bg-blue-600 hover:bg-blue-700 w-full"
+                        className="btn-sm text-white bg-blue-600 hover:bg-blue-700 w-full text-center block"
                         href={(annual) ? plan.annualUrl : plan.monthlyUrl}
                       >
                         {plan.ctaText}
