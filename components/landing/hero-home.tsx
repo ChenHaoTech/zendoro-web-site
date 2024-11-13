@@ -51,7 +51,7 @@ const HeroHome = () => {
               </p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center mb-4" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="https://my.fleetingnotes.app">Try Web App</a>
+                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href={process.env.NEXT_PUBLIC_LINK_ZENDORO_WEB}>Try Web App</a>
                 </div>
                 <div>
                   <a className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="/docs">Learn more</a>
@@ -60,26 +60,6 @@ const HeroHome = () => {
             </div>
           </div>
 
-          {/* Hero image */}
-          <div>
-            <div className="relative flex justify-center mb-8 max-w-3xl mx-auto" data-aos="zoom-y-out" data-aos-delay="450">
-              <div className="flex flex-col justify-center w-full shadow-md border rounded">
-                {iframeHidden ? (
-                  <img className="w-full mx-auto" src="assets/demo.png" alt="Hero" />
-                ) : (
-                  <iframe className="w-full h-[500px]" src="https://my.fleetingnotes.app/?note=d8e2d800-3470-11ed-8f75-019219fce7fb"></iframe>
-                )}
-              </div>
-              <button className={`absolute top-full flex items-center transform -translate-y-1/2 bg-white rounded-full font-medium group p-4 shadow-lg ${iframeHidden ? 'block' : 'hidden'}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIframeHidden(!iframeHidden); }} aria-controls="modal">
-                <svg className="w-6 h-6 fill-current text-gray-400 group-hover:text-blue-600 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z" />
-                  <path d="M10 17l6-5-6-5z" />
-                </svg>
-                <span className="ml-3">Click to try yourself</span>
-              </button>
-            </div>
-          </div>
-        
         </div>
       </div>
     </section>
