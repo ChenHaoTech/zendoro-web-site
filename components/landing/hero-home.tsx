@@ -2,22 +2,22 @@ import { useEffect, useState } from "react";
 import PreviewLink from "../misc/preview-link";
 
 const HeroHome = () => {
-  const [iframeHidden, setIframeHidden] = useState(true);  
+  const [iframeHidden, setIframeHidden] = useState(true);
 
-    // hides iframe to prevent focus jank (jumping to iframe on click) 
-    useEffect(() => {
-      let lastScrollPosition = window.scrollY;
-      const scrollHandler = () => {
-        if (Math.abs(lastScrollPosition - window.scrollY) > 500) {
-          lastScrollPosition = window.scrollY;
-          setIframeHidden(true);
-        }
-      };
-      window.addEventListener('scroll', scrollHandler);
-      return () => window.removeEventListener('scroll', scrollHandler);
-    }, []);  
+  // hides iframe to prevent focus jank (jumping to iframe on click) 
+  useEffect(() => {
+    let lastScrollPosition = window.scrollY;
+    const scrollHandler = () => {
+      if (Math.abs(lastScrollPosition - window.scrollY) > 500) {
+        lastScrollPosition = window.scrollY;
+        setIframeHidden(true);
+      }
+    };
+    window.addEventListener('scroll', scrollHandler);
+    return () => window.removeEventListener('scroll', scrollHandler);
+  }, []);
 
-  return(
+  return (
     <section className="relative">
 
       {/* Illustration behind hero content */}
@@ -43,11 +43,12 @@ const HeroHome = () => {
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
 
           {/* Section header */}
+
           <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-6xl md:text-7xl font-extrabold leading-tight mb-4" data-aos="zoom-y-out">Imagine Apple Notes, synced with <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-900 to-purple-400">Obsidian</span></h1>
+            <h1 className="text-6xl md:text-7xl font-extrabold leading-tight mb-4" data-aos="zoom-y-out">Next Level Pomodoro: Where Your <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-900 to-purple-400">Flow Never Stops</span></h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl md:text-2xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">
-                Your Ideas, Instantly in Obsidian: The Open-Source Tool Making Note-Taking Effortless
+                The first timer that adapts to your rhythm - maintain momentum while taking breaks when needed
               </p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center mb-4" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>

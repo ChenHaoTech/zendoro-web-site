@@ -45,3 +45,51 @@ Description: Internet down? No problem. Keep your focus sessions running smoothl
 Data Freedom
 Title: Your Data, Your Way
 Description: Export your focus history in formats that work for you. Generate beautiful Markdown reports for your blog, or analyze your patterns in Excel. Your focus data is always accessible and portable, just the way it should be.
+
+
+Here's a more concise version:
+I'll help make this more concise while maintaining the structure in English.
+
+## USP
+USP: Next Level Pomodoro: Where Your Flow Never Stops
+USP DESC: The first timer that adapts to your rhythm - maintain momentum while taking breaks when needed
+
+## Pain Points Q&A
+Q: Frustrated When Timers Break Your Perfect Flow?
+A: Unlike fixed intervals, Zendoro adapts to your natural rhythm, preserving focus while ensuring timely breaks.
+
+Q: Tired of Losing Track of When You Started Working?
+A: Zendoro's window logging lets you backtrack and capture all focused time, even if you forget to start the timer.
+
+Q: Overwhelmed by Complex Task Management During Deep Work?
+A: Our minimalist task list syncs with Todoist, eliminating context switching while keeping you focused.
+
+## Core Features
+Title: Flow-State Protection™
+Description: Stay focused longer with intelligent break timing that protects rather than interrupts your flow state.
+Call-to-action: Protect Your Flow →
+
+Title: Time Travel Timer
+Description: Retroactively start timers from past browser sessions with one click, ensuring no focused work goes uncounted.
+Call-to-action: Start From Any Moment →
+
+Title: Custom Focus Soundscapes
+Description: Mix your ideal white noise combinations for the perfect work environment.
+Call-to-action: Craft Your Sound →
+
+# Feature Section
+Cross-Platform Flow
+Title: Your Flow, Everywhere
+Description: Seamlessly sync focus sessions across all your devices, maintaining momentum wherever you work.
+
+Keyboard Commander
+Title: Lightning-Fast Control
+Description: Access every feature with quick keyboard shortcuts - no mouse needed.
+
+Offline Power
+Title: Focus Without Limits
+Description: Work uninterrupted offline, with automatic syncing when connection returns.
+
+Data Freedom
+Title: Your Data, Your Way
+Description: Export focus history in Markdown or Excel formats for easy analysis and sharing.

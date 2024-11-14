@@ -20,8 +20,8 @@ function FeaturesHome() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Tired of Manually Transferring Notes to Obsidian?</h1>
-            <p className="text-xl text-gray-600">I know typical <PreviewLink href="/posts/put-quick-notes-into-obsidian-from-anywhere">PKM tools aren't built for quick capture</PreviewLink>. With Fleeting Notes, you can capture ideas that sync directly with your knowledge base</p>
+            <h1 className="h2 mb-4">Frustrated When Timers Break Your Perfect Flow?</h1>
+            <p className="text-xl text-gray-600"> Unlike fixed intervals, Zendoro adapts to your natural rhythm, preserving focus while ensuring timely breaks.</p>
           </div>
 
           {/* Top image */}
@@ -35,8 +35,8 @@ function FeaturesHome() {
             {/* Content */}
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                <h3 className="h3 mb-3">Everything you need for quick capture</h3>
-                <p className="text-xl text-gray-600">Take your workflow to the next level and make quick capture actually quick</p>
+                <h3 className="h3 mb-3">Overwhelmed by Complex Task Management During Deep Work?</h3>
+                <p className="text-xl text-gray-600">Our minimalist task list syncs with Todoist, eliminating context switching while keeping you focused.</p>
               </div>
               {/* Tabs buttons */}
               <div className="mb-8 md:mb-0">
@@ -45,8 +45,8 @@ function FeaturesHome() {
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Capture Ideas Anytime, Anywhere</div>
-                    <div className="text-gray-600">Create and sync fleeting notes on the web, in your phone, or even within a browser extension</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Flow-State Protection</div>
+                    <div className="text-gray-600">Stay focused longer with intelligent break timing that protects rather than interrupts your flow state.</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -59,8 +59,8 @@ function FeaturesHome() {
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Keep track of any source</div>
-                    <div className="text-gray-600">Highlight text, share links, and paste images/files directly into Fleeting Notes</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Time Travel Timer</div>
+                    <div className="text-gray-600">Retroactively start timers from past browser sessions with one click, ensuring no focused work goes uncounted.</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -68,20 +68,21 @@ function FeaturesHome() {
                     </svg>
                   </div>
                 </button>
-                <button
+                <a
+                  href="/download"
                   className={`text-left flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 3 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Built for Obsidian MD</div>
-                    <div className="text-gray-600">Use the "Fleeting Notes Sync" Obsidian plugin to sync and process your notes</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">Custom Focus Soundscapes</div>
+                    <div className="text-gray-600">Mix your ideal white noise combinations for the perfect work environment.</div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11.334 8.06a.5.5 0 00-.421-.237 6.023 6.023 0 01-5.905-6c0-.41.042-.82.125-1.221a.5.5 0 00-.614-.586 6 6 0 106.832 8.529.5.5 0 00-.017-.485z" fill="#191919" fillRule="nonzero" />
                     </svg>
                   </div>
-                </button>
+                </a>
               </div>
             </div>
 
