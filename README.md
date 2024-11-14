@@ -1,8 +1,9 @@
+## USP
 USP: Next Level Pomodoro: Where Your Flow Never Stops
 USP DESC: Experience the First Timer That Adapts to Your Natural Rhythm - Keep Your Momentum Going While Taking Breaks When You Really Need Them
 
 
-用户痛点问答：
+## 用户痛点问答：
 Q: Frustrated When Timers Break Your Perfect Flow?
 A: Traditional pomodoro timers force you to stop at fixed intervals. With Zendoro, your timer adapts to your natural rhythm, keeping you in the zone while ensuring healthy breaks.
 
@@ -16,7 +17,7 @@ A: Context switching kills productivity. Zendoro's distraction-free task list le
 
 
 
-三个核心功能展示：
+## 三个核心功能展示
 Title: Flow-State Protection™
 Description: Stay in your perfect rhythm. When you're deeply focused, Zendoro's time-flow technology keeps your timer running while intelligently calculating your ideal break time. Your flow state is finally protected, not interrupted.
 Call-to-action: Protect Your Flow →
