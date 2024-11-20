@@ -1,28 +1,28 @@
 import { DefaultSeoProps } from "next-seo";
 
-const description = "Tired of manually transferring notes to Obsidian? Use Fleeting Notes to effortlessly capture your ideas and sync them with Obsidian."
+const description = "Experience the First Timer That Adapts to Your Natural Rhythm - Keep Your Momentum Going While Taking Breaks When You Really Need Them"
 // See https://www.npmjs.com/package/next-seo for more options
 const config: DefaultSeoProps = {
-  titleTemplate: "%s | Fleeting Notes",
-  defaultTitle: "Fleeting Notes | A scratchpad that syncs with Obsidian",
-  canonical: 'https://www.fleetingnotes.app/',
+  titleTemplate: "%s | Zendoro",
+  defaultTitle: "Zendoro - Next Level Pomodoro",
+  canonical: 'https://www.zendoro.app/',
   description,
   
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    title: 'Fleeting Notes',
+    title: 'Zendoro - Next Level Pomodoro',
     description,
-    url: 'https://www.fleetingnotes.app/',
+    url: 'https://www.zendoro.app/',
     images: [{
-      url: 'https://www.fleetingnotes.app/favicon/og-image.png',
+      url: 'https://www.zendoro.app/favicon/og-image.png',
       width: 1200,
       height: 787,
       alt: 'Og Image Alt',
     }]
   },
   twitter: {
-    site: '@fleetingnotes_',
+    site: '@HaoBuilds',
     cardType: 'summary_large_image',
   },
   additionalLinkTags: [
