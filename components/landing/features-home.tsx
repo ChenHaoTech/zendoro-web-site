@@ -118,7 +118,7 @@ function FeaturesHome() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded w-full" src="assets/source.gif" /> 
+                    <img className="md:max-w-none mx-auto rounded w-full" src="assets/window_activities.png" /> 
                   </div>
                 </Transition>
                 {/* Item 3 */}
@@ -134,7 +134,7 @@ function FeaturesHome() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded w-full" src="assets/obs-sync.gif" /> 
+                    <img className="md:max-w-none mx-auto rounded w-full" src="assets/audio_mixes.gif" /> 
                   </div>
                 </Transition>
               </div>
