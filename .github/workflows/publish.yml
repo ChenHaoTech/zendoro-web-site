@@ -1,7 +1,7 @@
 name: Trigger publish workflow
 env:
-  GH_USERNAME: fleetingnotes
-  GH_REPONAME: fleeting-notes-website-md
+  GH_USERNAME: ChenHaoTech
+  GH_REPONAME: zendoro-public
   WORKFLOW_FILE: publish.yml
 on:
   workflow_dispatch:
