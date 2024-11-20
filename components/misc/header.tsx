@@ -49,7 +49,7 @@ const Header = () => {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             {/* Logo */}
-            <Link href="/" className="block" aria-label="Fleeting Notes">
+            <Link href="/" className="block" aria-label={process.env.NEXT_PUBLIC_APP_NAME}>
               <img className="w-8 h-8" src="/assets/logo-transparent.png"/>
             </Link>
           </div>

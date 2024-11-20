@@ -28,7 +28,7 @@ export default function NewsletterSubscribe() {
         </svg>
         <div className="text-center">
           <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Subscribed!</h3>
-          <p className="text-gray-600 my-2">You've subscribed for the Fleeting Notes newsletter</p>
+          <p className="text-gray-600 my-2">You've subscribed for the {process.env.NEXT_PUBLIC_APP_NAME} newsletter</p>
           <p> Have a great day!  </p>
           <div className="py-10 text-center">
             <Link href="/" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">

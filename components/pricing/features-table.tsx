@@ -105,7 +105,7 @@ function FeaturesTable() {
                 <tr className="border-t border-gray-200">
                   <td className="text-sm sm:text-base pr-2 py-4">
                     <div className="font-medium underline">Dedicated support</div>
-                    <div className="text-gray-600">Everyone deserves dedicated support (<a className="underline" href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a>)</div>
+                    <div className="text-gray-600">Everyone deserves dedicated support (<a className="underline" href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>{process.env.NEXT_PUBLIC_EMAIL}</a>)</div>
                   </td>
                   <td className="text-sm px-2 py-4 text-center font-medium">
                     <svg className="w-3 h-3 fill-current text-green-500 inline-flex" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">

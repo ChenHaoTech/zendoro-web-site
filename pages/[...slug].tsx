@@ -25,7 +25,7 @@ type Props = {
 export default function Post({ post, backlinks }: Props) {
   const router = useRouter();
   const description = post.excerpt.slice(0, 155);
-  const absUrl = path.join("https://fleetingnotes.app", router.asPath);
+  const absUrl = path.join(process.env.NEXT_PUBLIC_APP_WEB_LINK, router.asPath);
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -45,7 +45,7 @@ export default function Post({ post, backlinks }: Props) {
               images: [{
                 url: (post.ogImage?.url)
                   ? post.ogImage.url
-                  : "https://fleetingnotes.app/favicon/512.png",
+                  : `${process.env.NEXT_PUBLIC_APP_WEB_LINK}/favicon/512.png`,
                 width: (post.ogImage?.url) ? null : 512,
                 height: (post.ogImage?.url) ? null : 512,
                 type: null,
