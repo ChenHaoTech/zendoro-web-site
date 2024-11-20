@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/misc/layout';
 import { NextSeo } from 'next-seo';
+import { illustration } from '../components/landing/hero-home';
 
 // 类型定义
 type StoreButtonProps = {
@@ -113,6 +114,8 @@ const DownloadTable: React.FC = () => {
                 <div className="p-6">
                     <h1 className="text-3xl font-bold text-center mb-8"></h1>
                 </div>
+                {/* illustration() */}
+                {illustration()}
 
                 {/* Download Cards Grid */}
                 <div className="grid md:grid-cols-2 gap-8">
