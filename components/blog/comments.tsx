@@ -3,10 +3,10 @@ import Giscus from "@giscus/react";
 function Comments() {
   return (
     <div className="mb-5">
-      <Giscus
+      {/* <Giscus
         id="comments"
         //todo  修改 
-        repo="fleetingnotes/fleeting-notes-website-md"
+        repo={process.env.NEXT_PUBLIC_MD_REPO}
         repoId="R_kgDOImOn5w"
         category="Announcements"
         categoryId="DIC_kwDOImOn584CTCQN"
@@ -17,7 +17,7 @@ function Comments() {
         theme="light"
         lang="en"
         loading="lazy"
-      />
+      /> */}
     </div>
   );
 }
